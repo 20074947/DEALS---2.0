@@ -15,7 +15,25 @@ describe('Deals', function() {
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
-                    expect(res.body.length).to.equal(5);
+                    done();
+                });
+        });
+    });
+
+        describe('POST /deals', function() {
+        it('should return confirmation message and update datastore', function(done) {
+            var deal = {
+                paymenttype: 'Waterford',
+                amount: 1000,
+                upvotes: 0,
+                info: 'Kids'
+            };
+            chai.request(server)
+                .post('/deals')
+                .send(deal)
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('Deal Added!');
                     done();
                 });
         });
