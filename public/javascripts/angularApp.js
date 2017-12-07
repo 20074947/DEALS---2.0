@@ -1,4 +1,7 @@
-var app = angular.module('DealWebApp', ['ngRoute']);
+    require('angular');
+    require('angular-route');
+    var app = angular.module('DealWebApp', ['ngRoute']);
+    require('./controllers/index');
 
 app.config(function($routeProvider) {
         $routeProvider

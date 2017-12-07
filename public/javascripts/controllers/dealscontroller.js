@@ -1,6 +1,6 @@
 var app = angular.module('DealWebApp');
 
-app.controller('dealsController', ['$scope','$http', function($scope, $http) {
+    function dealsController($scope, $http) { 
     // create a message to display in our view
     $scope.message = 'Deals Page!';
 
@@ -41,5 +41,6 @@ app.controller('dealsController', ['$scope','$http', function($scope, $http) {
                 });
         }
     };
-  }
-  ]);
+  };
+
+ module.exports = dealsController;

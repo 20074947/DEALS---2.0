@@ -1,0 +1,10 @@
+/node_modules
+/**/.DS_S*
+.DS_S*
+*.log
+/dist
+/coverage
+/build
+/views/index.ejs
+chromed*
+/build

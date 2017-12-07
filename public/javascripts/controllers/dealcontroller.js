@@ -1,6 +1,6 @@
 var app = angular.module('DealWebApp');
 
-app.controller('dealController', ['$scope','$location','$http', function($scope, $location, $http) {
+function dealController($scope, $location, $http) { 
     
     $scope.formData = {};
 
@@ -28,6 +28,6 @@ $location.path('/deals');
                 console.log('Error: ' + data);
             });
     };
-  }
+  };
 
-  ]);
+  module.exports = dealController;
