@@ -7,7 +7,25 @@ chai.use(chaiHttp);
 var _ = require('lodash' );
 
 describe('Deals', function() {
-
+    describe('Dealss', function() {
+        beforeEach(function() {
+            while (datastore.length > 0) {
+                datastore.pop();
+            }
+            datastore.push({
+                paymenttype: 'Waterford',
+                amount: 1000000,
+                upvotes: 0,
+                info: 'Food',
+            });
+            datastore.push({
+                paymenttype: 'Dublin',
+                amount: 1002,
+                upvotes: 0,
+                info: 'Food',
+            });
+        });
+    });
     describe('GET /deals', function() {
         it('should return all the deals in an array', function(done) {
             chai.request(server)
