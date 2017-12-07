@@ -1,5 +1,7 @@
     var path = require('path');
     var webpack = require('webpack');
+        var HtmlWebpackPlugin = require('html-webpack-plugin');
+    var CleanWebpackPlugin = require('clean-webpack-plugin');
 
     module.exports = {
       debug: true,
