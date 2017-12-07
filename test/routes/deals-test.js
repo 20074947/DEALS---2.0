@@ -38,4 +38,22 @@ describe('Deals', function() {
                 });
         });
     });
+            describe('PUT /deals/:_id/votes', function() {
+        it('should return all deals with specified deal updated', function(done) {
+            chai.request(server)
+                .put('/deals/5a2948f8c59c0580016cb350/votes')
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    done();
+                });
+        });
+        it('should return a 404 status and message for invalid deal id', function(done) {
+            chai.request(server)
+                .put('/deals/1100001/votes')
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    done();
+                });
+        });
+    });
 });

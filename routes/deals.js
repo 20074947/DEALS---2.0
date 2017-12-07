@@ -73,7 +73,7 @@ router.incrementUpvotes = function(req, res) {
                 if (err)
                     res.send(err);
                 else
-                res.json({ message: 'Deal Upvoted!', data: deal });
+                res.json({ message: 'Invalid Deal Id!', data: deal });
             });
         }
     });
