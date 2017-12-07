@@ -1,0 +1,41 @@
+<div class="jumbotron text-center">
+	<h1>List All Deals</h1>
+
+  <div ng-controller="dealsController as list">
+	<table align="center" valign="middle">
+	  <tbody ng-repeat="deal in deals | orderBy:'-upvotes'">
+        <tr style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle"; >
+        	<td>
+            <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(deal._id)"></span>
+              {{deal.upvotes}}
+             </td>
+             <td> 
+             <span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>{{deal.paymenttype}}</span>
+         	</td>
+             <td>
+            <span class="glyphicon glyphicon-euro"></span> 
+            {{deal.amount}}
+    		</td>
+
+        <td>
+            <span class="glyphicon glyphicon-info-sign"></span>
+            {{deal.info}}
+        </td>
+ 			<td>
+      
+      <span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>
+
+      
+      <button type="button" class="btn btn-default" ng-click="delete(deal._id)">
+          <span class="glyphicon glyphicon-remove"></span> Remove 
+        </button>
+        <button type="button" class="btn btn-default" ng-click="update(deal)">
+          <span class="glyphicon glyphicon-edit"></span> Edit 
+        </button>
+        </span>    
+             </td>
+    	</tr>
+      </tbody>
+    </table> 
+  </div>
+</div>
