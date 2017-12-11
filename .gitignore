@@ -8,3 +8,4 @@
 /views/index.ejs
 chromed*
 /build
+/dist
