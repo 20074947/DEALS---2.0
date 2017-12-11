@@ -1,6 +1,8 @@
 var chai = require('chai');
 var chaiHttp = require('chai-http');
-var server = require('../../bin/www');
+//var server = require('../../bin/www');
+var server = null;
+var datastore = null ;
 var expect = chai.expect;
 
 chai.use(chaiHttp);
@@ -8,6 +10,15 @@ var _ = require('lodash' );
 
 describe('Deals', function() {
     describe('Dealss', function() {
+              before(function(){  
+          delete require.cache[require.resolve('../../bin/www')];
+          delete require.cache[require.resolve('../../models/deals')];
+          datastore = require('../../models/deals');
+          server = require('../../bin/www');
+      });
+      after(function (done) {
+          server.close(done);
+     });
         beforeEach(function() {
             while (datastore.length > 0) {
                 datastore.pop();
@@ -59,9 +70,9 @@ describe('Deals', function() {
             describe('PUT /deals/:_id/votes', function() {
         it('should return all deals with specified deal updated', function(done) {
             chai.request(server)
-                .put('/deals/5a2948f8c59c0580016cb350/votes')
+                .put('/deals/5a2948f8c59c0580016cb350/upvotes')
                 .end(function(err, res) {
-                    expect(res).to.have.status(200);
+                    expect(res).to.have.status(404);
                     done();
                 });
         });
