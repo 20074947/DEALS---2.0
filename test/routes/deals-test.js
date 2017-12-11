@@ -1,8 +1,6 @@
 var chai = require('chai');
 var chaiHttp = require('chai-http');
-//var server = require('../../bin/www');
-var server = null;
-var datastore = null ;
+var server = require('../../bin/www');
 var expect = chai.expect;
 
 chai.use(chaiHttp);
@@ -10,15 +8,6 @@ var _ = require('lodash' );
 
 describe('Deals', function() {
     describe('Dealss', function() {
-              before(function(){  
-          delete require.cache[require.resolve('../../bin/www')];
-          delete require.cache[require.resolve('../../models/deals')];
-          datastore = require('../../models/deals');
-          server = require('../../bin/www');
-      });
-      after(function (done) {
-          server.close(done);
-     });
         beforeEach(function() {
             while (datastore.length > 0) {
                 datastore.pop();
