@@ -9,3 +9,4 @@
 chromed*
 /build
 /dist
+/coverage
