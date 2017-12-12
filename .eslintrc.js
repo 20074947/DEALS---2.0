@@ -1,6 +1,7 @@
 module.exports = {
     "env": {
-        "browser": true
+            "node": true,
+            "mocha": true
     },
     "extends": "eslint:recommended",
     "rules": {
@@ -8,6 +9,9 @@ module.exports = {
             "error",
             "tab"
         ],
+            "plugins": [
+        "json"
+    ],
         "linebreak-style": [
             "error",
             "unix"

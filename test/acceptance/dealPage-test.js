@@ -1,6 +1,6 @@
-var chai = require('chai');
-var test = require('selenium-webdriver/testing');
-var webdriver = require('selenium-webdriver');
+var chai = require("chai");
+var test = require("selenium-webdriver/testing");
+var webdriver = require("selenium-webdriver");
 var expect = chai.expect;
 var until = webdriver.until;
 var By = webdriver.By;
@@ -11,20 +11,20 @@ var mochaTimeOut = 30000;
 var pageSelector;
 var noDeals;
 
-test.describe('Deal page', function() {
-    this.timeout(mochaTimeOut);
+test.describe("Deal page", function() {
+	this.timeout(mochaTimeOut);
 
-    test.it( 'shows the main header', function() {
-      /*  driver.findElement(By.tagName('h1')).then( function( element ) {
+	test.it( "shows the main header", function() {
+		/*  driver.findElement(By.tagName('h1')).then( function( element ) {
             element.getText().then(function(text) {
                 expect(text).to.equal('Make a Deal');
             });
         }); */
-    } );
+	} );
 
 
-    test.it( 'accepts deal and displays in list', function() {
-      /*  var select = driver.findElement(By.tagName('select'));
+	test.it( "accepts deal and displays in list", function() {
+		/*  var select = driver.findElement(By.tagName('select'));
         select.then( function( element ) {
             return element.findElements(By.tagName('option'));
         })
@@ -64,7 +64,7 @@ test.describe('Deal page', function() {
             .then(function(text) {
                 expect(text).to.equal('2000');
             } ); */
-    } );
+	} );
 
 });
 

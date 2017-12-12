@@ -1,6 +1,6 @@
-var chai = require('chai');
-var test = require('selenium-webdriver/testing');
-var webdriver = require('selenium-webdriver');
+var chai = require("chai");
+var test = require("selenium-webdriver/testing");
+var webdriver = require("selenium-webdriver");
 var expect = chai.expect;
 var until = webdriver.until;
 var By = webdriver.By;
@@ -10,20 +10,20 @@ var mochaTimeOut = 30000;
 
 var pageSelector;
 
-test.describe('Deals page', function() {
-    this.timeout(mochaTimeOut);
+test.describe("Deals page", function() {
+	this.timeout(mochaTimeOut);
 
-    test.it( 'shows the main header', function() {
-    //    driver.findElement(By.tagName('h1')).then( function( element ) {
-         //   element.getText().then(function(text) {
-           //     expect(text).to.equal('List All Deals');
-         //   });
-      //  });
-    } );
+	test.it( "shows the main header", function() {
+		//    driver.findElement(By.tagName('h1')).then( function( element ) {
+		//   element.getText().then(function(text) {
+		//     expect(text).to.equal('List All Deals');
+		//   });
+		//  });
+	} );
 
-    test.it( 'displays the deals', function() {
-       // var donations = driver.findElements(By.tagName('tr'));
-      /*  deals
+	test.it( "displays the deals", function() {
+		// var donations = driver.findElements(By.tagName('tr'));
+		/*  deals
             .then(function( elements ) {
                 return elements[0].findElement(By.name('amount'));
             })
@@ -44,7 +44,7 @@ test.describe('Deals page', function() {
             .then(function(text) {
                 expect(text).to.equal('1100');
             } ); */          
-    } );
+	} );
 
 });
 
