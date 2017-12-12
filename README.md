@@ -63,42 +63,59 @@ Acceptance Testing is a level of the software testing where a system is tested f
 
 Travis CI Link: https://travis-ci.org/20074947/DEALS---2.0
 
-## Test
+## Coveralls.
+
+Coveralls link: https://coveralls.io/github/20074947/DEALS---2.0
+
+## API endpoints.
+
++ GET /deals - get all the deals
++ GET /deals/:id - get a deal with a specifi id
++ POST /deals - add a deal
++ PUT /deals/:id/price - Update deal's price
++ DELETE /deals/:id - Delete a deal with a specific id
+
+## Sample Test execution.
 
   $ npm test
 
-> deals-2.0@0.0.0 test C:\Users\Kamel\WebStorm 2017.2.4\SSD\DEALS - 2.0
-> cross-env NODE_ENV=test PORT=4000 mocha test/routes/deals-test.js
 
 
-  Deals
+        $ npm test
+
+        > deals-2.0@0.0.0 test C:\Users\Kamel\WebStorm 2017.2.4\SSD\DEALS - 2.0
+        > cross-env NODE_ENV=test PORT=4000 mocha test/routes/deals-test.js
+
+
+
+        Deals
     GET /deals
-connected to database
-GET /deals 200 100.814 ms - 2
-      √ should return all the deals in an array (309ms)
-    POST /deals
-Adding deal: {"info":"Kids","amount":1000,"paymenttype":"Waterford","_id":"5a30619ec319a5042df937b5","upvotes":0}
-POST /deals 200 563.436 ms - 141
-      √ should return confirmation message and update datastore (589ms)
-    PUT /deals/:_id/votes
-PUT /deals/5a2948f8c59c0580016cb350/upvotes 404 109.252 ms - 41
-      √ should return all deals with specified deal updated (159ms)
-PUT /deals/1100001/votes 200 8.736 ms - 143
-      √ should return a 404 status and message for invalid deal id
-    DELETE /deals/:id
-DELETE /deals/5a2948f8c59c0580016cb350 200 14.882 ms - 27
-      √ should delete deal with a valid id
-DELETE /deals/1100001 200 5.031 ms - 143
-      √ should return a 404 status for invalid deal id to delete
-    GET /deals/:id
-GET /deals/5a2948f8c59c0580016cb350 200 8.863 ms - 2
-      √ should return a specific deal with a valid id
-GET /deals/1100001 200 2.303 ms - 182
-      √ should return a 404 status and message for invalid deal id
+     GET /deals 200 30.298 ms - 381
+         √ should return all the deals in an array (167ms)
+     POST /deals
+       POST /deals 200 82.677 ms - 25
+       √ should return confirmation message and update datastore (110ms)
+     PUT /deals/:id/price
+       PUT /deals/1000001/price 200 5.256 ms - 548
+       √ should return all deals with specified deal updated
+       PUT /deals/1100001/price 404 1.844 ms - 30
+       √ should return a 404 status and message for invalid deal id
+     DELETE /deals/:id
+       DELETE /deals/1000001 200 1.506 ms - 27
+       √ should delete deal with a valid id
+       DELETE /deals/1100001 200 1.744 ms - 27
+       √ should return a 404 status for invalid deal id to delete
+     GET /deals/:id
+       GET /deals/1000000 200 3.061 ms - 188
+       √ should return a specific deal with a valid id
+       GET /deals/1100001 404 1.456 ms - 29
+       √ should return a 404 status and message for invalid deal id
 
 
-  8 passing (1s)
+       8 passing (1s)
 
 ## Extra features.
 
--  Code Quality
++ Code Quality
++ Exception testing
++ Branch-Edit-Merge workflow
