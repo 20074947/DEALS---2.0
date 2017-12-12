@@ -16,7 +16,7 @@
     "clean-dist": "rimraf ./dist && mkdir dist",
     "lint": "esw ./public/javascript/**/*.js ./test ./routes ./models/",
     "test": "cross-env NODE_ENV=test PORT=4000 mocha test/routes/deals-test.js",
- "coverage": "cross-env NODE_ENV=test PORT=4000 istanbul cover _mocha -- test/routes/deals-test.js test/acceptance/*-test.js",
+    "coverage": "cross-env NODE_ENV=test PORT=4000 istanbul cover _mocha -- test/routes/deals-test.js test/acceptance/*-test.js",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "check-coverage": "istanbul check-coverage --statements 70 --branches 40 --functions 40 --lines 70",
     "server": "nodemon bin/www"
@@ -52,7 +52,7 @@
     "nodemon": "^1.12.5",
     "npm-run-all": "^4.1.2",
     "rimraf": "^2.6.2",
-         "selenium-webdriver": "3.3.0",
+    "selenium-webdriver": "3.3.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.9",
     "webpack": "^1.15.0"
