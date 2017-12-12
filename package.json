@@ -17,6 +17,7 @@
     "lint": "esw ./public/javascript/**/*.js ./test ./routes ./models/",
     "test": "cross-env NODE_ENV=test PORT=4000 mocha test/routes/deals-test.js",
     "coverage": "cross-env set NODE_ENV=test PORT=4000 istanbul cover _mocha -- test/routes/deals-test.js",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "server": "nodemon bin/www"
   },
   "dependencies": {
@@ -39,6 +40,7 @@
     "chai-http": "^2.0.1",
     "chai-things": "^0.2.0",
     "clean-webpack-plugin": "^0.1.17",
+    "coveralls": "^2.13.1",
     "cross-env": "^5.1.1",
     "css-loader": "^0.24.0",
     "extract-text-webpack-plugin": "^1.0.1",
