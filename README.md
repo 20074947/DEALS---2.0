@@ -114,6 +114,25 @@ Coveralls link: https://coveralls.io/github/20074947/DEALS---2.0
 
        8 passing (1s)
 
+## git branches.
+
+      acceptance-test
+      buildTasks
+      cssbundle
+      development
+      * master
+      prodbuild
+      remotes/origin/acceptance-test
+      remotes/origin/development
+      remotes/origin/master
+      remotes/origins/development
+      remotes/origins/master
+
+
+## Heroku.
+
+Link: https://dashboard.heroku.com/apps/still-mesa-66808
+
 ## Extra features.
 
 + Code Quality
